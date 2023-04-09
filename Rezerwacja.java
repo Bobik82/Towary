@@ -9,35 +9,58 @@ public class Rezerwacja {
     {
         this.maksRozmiar =10;
         towary=new Towar[maksRozmiar];
+
     }
 
     public Rezerwacja(int maksimum)
     {
         this.maksRozmiar=maksimum;
+        towary=new Towar[maksRozmiar];
     }
 
-    public void dodajTowar(Towar t)
+    public void dodajTowar(Towar t, int i)
     {
-        /*Scanner scan = new Scanner(System.in);
-        System.out.println("Podaj nazwe towaru: ");
-        t.nazwaTowaru=scan.nextLine();
-        System.out.println("Podaj ilosć: ");
-        this.ileTowarow=scan.nextInt();*/
-
-       towary[0]=t;
-
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Podaj ile towarow do zamowienia: ");
+            System.out.println(t.nazwaTowaru);
+        this.ileTowarow=scan.nextInt();
+        towary[i] = t;
+        towary[i].liczbaSztuk=ileTowarow;
+        System.out.println(t.nazwaTowaru);
 
     }
 
     public double obliczWartoscRezerwacji()
     {
+        double suma=0;
+        for (int i=0; i<this.towary.length;i++) {
+            if(towary[i]!=null)
+            suma+=towary[i].obliczWartosc();
+            else
+                break;
+        }
 
-        return 0;
+        return suma;
     }
 
     public String wypiszRezerwacje()
     {
-        return this.towary[0].wypiszTowar();
+        String napis="";
+        double wartosc=0;
+        for(int i=0; i<towary.length;i++)
+        {
+
+            if(towary[i]!=null)
+            {
+                napis = this.towary[i].wypiszTowar();
+            }
+            else
+            {
+                napis="brak";
+            }
+            wartosc+=obliczWartoscRezerwacji();
+        }
+        return napis+ " "+ wartosc;
     }
 
 

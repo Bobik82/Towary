@@ -6,7 +6,7 @@ public class Main
         Scanner scan = new Scanner(System.in);
         int wybor;
         Towar t1=new Towar("Dildo", 1000, 50);
-        Towar t2=new Towar("Marihuadol", 1024, 40);
+        Towar t2=new Towar("Marihuanol", 1024, 40);
         Rezerwacja r1=new Rezerwacja();
         do
         {
@@ -23,8 +23,9 @@ public class Main
                         t2.wypiszTowar();
                     break;
                 case 2:
-                    r1.dodajTowar(t1);
-                    r1.dodajTowar(t2);
+                    r1.dodajTowar(t2,0);
+                    r1.dodajTowar(t1,1);
+                    System.out.println("Dodano towary");
                     break;
                 case 3:
                     r1.wypiszRezerwacje();
