@@ -37,9 +37,7 @@ public class Rezerwacja {
 
     public String wypiszRezerwacje()
     {
-        
-        String rezerwacja=towary[0].wypiszTowar();
-        return rezerwacja;
+        return this.towary[0].wypiszTowar();
     }
 
 
