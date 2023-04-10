@@ -9,13 +9,15 @@ public class Rezerwacja {
     {
         this.maksRozmiar =10;
         towary=new Towar[maksRozmiar];
-
+        Scanner scan = new Scanner(System.in);
     }
 
     public Rezerwacja(int maksimum)
     {
         this.maksRozmiar=maksimum;
         towary=new Towar[maksRozmiar];
+        Scanner scan = new Scanner(System.in);
+
     }
 
     public void dodajTowar(Towar t, int i)

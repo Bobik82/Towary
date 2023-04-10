@@ -7,7 +7,7 @@ public class Main
         int wybor;
         Towar t1=new Towar("Dildo", 5000, 50);
         Towar t2=new Towar("Marihuanol", 5000, 40);
-        Rezerwacja r1=new Rezerwacja();
+        RezerwacjaMobilna r1=new RezerwacjaMobilna();
         do
         {
             System.out.println("MENU");
@@ -25,10 +25,14 @@ public class Main
                 case 2:
                     r1.dodajTowar(t2,0);
                     r1.dodajTowar(t1,1);
+                    r1.wybierzDostawe();
+                    r1.wybierzPlatnosc();
                     System.out.println("Dodano towary");
                     break;
                 case 3:
                     r1.wypiszRezerwacje();
+                    System.out.println(r1.rodzajDostawy);
+                    System.out.println(r1.rodzajPlatnosci);
                     break;
                     case 4:
                      break;
