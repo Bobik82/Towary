@@ -53,14 +53,16 @@ public class Rezerwacja {
             if(towary[i]!=null)
             {
                 napis = this.towary[i].wypiszTowar();
+                wartosc+=towary[i].obliczWartosc();
             }
             else
             {
                 napis="brak";
             }
-            wartosc+=obliczWartoscRezerwacji();
         }
-        return napis+ " "+ wartosc;
+        System.out.println("Wartosc zamowienia: "+wartosc+"zl");
+
+        return napis;
     }
 
 
