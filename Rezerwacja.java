@@ -47,6 +47,7 @@ public class Rezerwacja {
     {
         String napis="";
         double wartosc=0;
+        double wartosczrabatem=0;
         for(int i=0; i<towary.length;i++)
         {
 
@@ -54,6 +55,7 @@ public class Rezerwacja {
             {
                 napis = this.towary[i].wypiszTowar();
                 wartosc+=towary[i].obliczWartosc();
+                wartosczrabatem+=towary[i].obliczWartoscZRabatem();
             }
             else
             {
@@ -61,6 +63,7 @@ public class Rezerwacja {
             }
         }
         System.out.println("Wartosc zamowienia: "+wartosc+"zl");
+        System.out.println("Wartosc zamowienia z rabatem: "+wartosczrabatem+"zl");
 
         return napis;
     }

@@ -5,8 +5,8 @@ public class Main
     {
         Scanner scan = new Scanner(System.in);
         int wybor;
-        Towar t1=new Towar("Dildo", 1000, 50);
-        Towar t2=new Towar("Marihuanol", 1024, 40);
+        Towar t1=new Towar("Dildo", 5000, 50);
+        Towar t2=new Towar("Marihuanol", 5000, 40);
         Rezerwacja r1=new Rezerwacja();
         do
         {
